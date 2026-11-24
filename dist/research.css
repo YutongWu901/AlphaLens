@@ -1,0 +1,451 @@
+.rv-workbench {
+  --rv-bg: #111925;
+  --rv-edge: #243040;
+  --rv-ink: #e5edf5;
+  --rv-muted: #98a8bb;
+  --rv-green: #55dfbf;
+  --rv-purple: #aa94f9;
+  min-width: 0;
+  color: var(--rv-ink);
+  font-family: inherit;
+  padding-bottom: 24px;
+}
+.rv-workbench * {
+  box-sizing: border-box;
+}
+.rv-workbench h1,
+.rv-workbench h2,
+.rv-workbench h3,
+.rv-workbench p {
+  margin: 0;
+}
+.rv-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 22px;
+}
+.rv-head h1 {
+  font-size: clamp(25px, 2.5vw, 35px);
+  letter-spacing: -1px;
+  font-weight: 650;
+  line-height: 1.25;
+}
+.rv-head p {
+  color: var(--rv-muted);
+  margin-top: 8px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+.rv-workbench button,
+.rv-workbench input,
+.rv-workbench select {
+  font: inherit;
+}
+.rv-workbench button {
+  cursor: pointer;
+}
+.rv-panel,
+.rv-form,
+.rv-metric {
+  background: var(--rv-bg);
+  border: 1px solid var(--rv-edge);
+  border-radius: 10px;
+}
+.rv-panel,
+.rv-form {
+  margin-bottom: 16px;
+}
+.rv-panel {
+  overflow: hidden;
+}
+.rv-panelhead {
+  padding: 16px 18px 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.rv-panelhead h2,
+.rv-formtitle {
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  font-weight: 650;
+}
+.rv-panelhead small,
+.rv-note,
+.rv-legend,
+.rv-metric small,
+.rv-method {
+  font-size: 13px;
+  color: var(--rv-muted);
+  line-height: 1.65;
+}
+.rv-note {
+  margin: 0 18px 13px !important;
+}
+.rv-form {
+  padding: 15px 17px;
+}
+.rv-formtitle {
+  margin-bottom: 13px !important;
+}
+.rv-fields {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+}
+.rv-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  flex: 1 1 118px;
+}
+.rv-field span,
+.rv-label {
+  font-size: 13px;
+  color: var(--rv-muted);
+}
+.rv-field input,
+.rv-field select,
+.rv-panel select,
+.rv-table input,
+.rv-table select {
+  width: 100%;
+  min-width: 0;
+  height: 37px;
+  border: 1px solid #344353;
+  border-radius: 6px;
+  background: #0c1420;
+  color: #e3eaf0;
+  padding: 0 9px;
+  color-scheme: dark;
+}
+.rv-narrow {
+  max-width: 150px;
+}
+.rv-action,
+.rv-secondary,
+.rv-iconbtn {
+  min-height: 37px;
+  padding: 0 14px;
+  border-radius: 6px;
+  border: 1px solid #374751;
+  white-space: nowrap;
+  font-size: 13px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.rv-action {
+  background: var(--rv-green);
+  color: #092a22;
+  border-color: var(--rv-green);
+  font-weight: 700 !important;
+}
+.rv-secondary,
+.rv-iconbtn {
+  background: #162130;
+  color: #cedbe8;
+}
+.rv-secondary:hover,
+.rv-iconbtn:hover {
+  background: #223144;
+}
+.rv-iconbtn {
+  padding: 0 9px;
+}
+.rv-workbench button:focus-visible,
+.rv-workbench input:focus-visible,
+.rv-workbench select:focus-visible {
+  outline: 2px solid var(--rv-green);
+  outline-offset: 2px;
+}
+.rv-workbench button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.rv-workbench .rv-slim {
+  min-height: 30px;
+  font-size: 12px !important;
+}
+.rv-workbench .rv-link {
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--rv-green);
+  font-family: ui-monospace, Consolas, monospace;
+  font-weight: 700;
+}
+.rv-method {
+  padding: 12px 16px;
+  background: #101823;
+  border-left: 2px solid #57728e;
+  border-radius: 3px;
+  margin: 12px 0;
+}
+.rv-method summary {
+  cursor: pointer;
+  color: #c0cfdd;
+}
+.rv-method p {
+  margin-top: 6px;
+}
+.rv-error {
+  border: 1px solid #795735;
+  color: #ffd894;
+  background: #241f1a;
+  border-radius: 7px;
+  padding: 14px 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 12px 0;
+}
+.rv-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.rv-metric {
+  padding: 13px 15px;
+  min-width: 0;
+}
+.rv-metric > div {
+  font-size: 13px;
+  color: var(--rv-muted);
+}
+.rv-metric strong {
+  display: block;
+  font-size: clamp(20px, 2.1vw, 28px);
+  font-weight: 600;
+  color: var(--rv-ink);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+}
+.rv-up {
+  color: var(--rv-green) !important;
+}
+.rv-down {
+  color: #f18c92 !important;
+}
+.rv-workbench .rv-scroll {
+  width: 100%;
+  overflow: auto;
+  max-height: 460px;
+}
+.rv-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.rv-table th,
+.rv-table td {
+  padding: 10px 14px;
+  text-align: right;
+  white-space: nowrap;
+  border-top: 1px solid #202c3b;
+}
+.rv-table th {
+  font-weight: 500;
+  color: #9aacbf;
+  background: #101722;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.rv-table th:first-child,
+.rv-table td:first-child {
+  text-align: left;
+}
+.rv-table tr:hover td {
+  background-color: #152131;
+}
+.rv-table td.rv-cell-matrix {
+  text-align: center;
+  min-width: 56px;
+  border: 1px solid rgba(9, 14, 24, 0.48);
+}
+.rv-chart {
+  position: relative;
+  margin: 0 10px 10px;
+  min-height: 180px;
+}
+.rv-chart svg {
+  width: 100%;
+  height: clamp(200px, 25vw, 315px);
+  display: block;
+  overflow: visible;
+}
+.rv-chart .rv-crosshair {
+  display: none;
+}
+.rv-tooltip {
+  position: absolute;
+  pointer-events: none;
+  display: none;
+  z-index: 2;
+  padding: 8px 10px;
+  background: #0a111cee;
+  border: 1px solid #3c5063;
+  border-radius: 5px;
+  color: #dbe5ef;
+  line-height: 1.65;
+  font:
+    12px/1.65 ui-monospace,
+    Consolas,
+    monospace;
+  white-space: pre;
+}
+.rv-legend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.rv-legend i {
+  width: 13px;
+  height: 3px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+.rv-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.rv-empty {
+  padding: 25px 18px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--rv-muted);
+  line-height: 1.65;
+}
+.rv-tabset {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.rv-tabset button {
+  background: transparent;
+  border: 1px solid var(--rv-edge);
+  color: var(--rv-muted);
+  border-radius: 5px;
+  padding: 4px 10px;
+  font-size: 13px;
+}
+.rv-tabset button[aria-pressed="true"] {
+  color: var(--rv-green);
+  border-color: #347a70;
+  background: #133029;
+}
+.rv-weights {
+  margin-top: 12px;
+  padding-top: 11px;
+  border-top: 1px solid var(--rv-edge);
+}
+.rv-weights summary {
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--rv-muted);
+}
+.rv-weights .rv-fields {
+  margin-top: 10px;
+}
+.rv-weights .rv-field {
+  flex: 1 1 72px;
+}
+.rv-hold-actions {
+  margin: 12px 15px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.rv-allocation {
+  padding: 2px 17px 16px;
+  display: grid;
+  gap: 12px;
+}
+.rv-barlabel {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+  color: #c7d4e0;
+  margin-bottom: 5px;
+}
+.rv-track {
+  height: 6px;
+  background: #202e3d;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.rv-track i {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+}
+.rv-equation {
+  padding: 10px 14px;
+  font:
+    13px/1.8 ui-monospace,
+    Consolas,
+    monospace;
+  color: #beaedf;
+  background: #181928;
+  border-radius: 5px;
+}
+.rv-status {
+  font-size: 13px;
+  color: var(--rv-muted);
+  align-self: center;
+}
+.rv-workbench [hidden] {
+  display: none !important;
+}
+.rv-dualhead {
+  font-size: 13px;
+  color: var(--rv-muted);
+}
+@media (max-width: 720px) {
+  .rv-cols {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .rv-head {
+    flex-direction: column;
+    gap: 9px;
+  }
+  .rv-form {
+    padding: 12px;
+  }
+  .rv-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .rv-narrow {
+    max-width: none;
+  }
+  .rv-table td,
+  .rv-table th {
+    padding: 9px 10px;
+  }
+  .rv-tooltip {
+    font-size: 11px;
+  }
+  .rv-chart {
+    margin-left: 2px;
+    margin-right: 4px;
+  }
+  .rv-weights .rv-field {
+    flex: 1 1 70px;
+  }
+}

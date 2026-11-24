@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0b0d14" />
+    <title>AlphaLens · 美股量化研究终端</title>
+    <link rel="icon" href="logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="research.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside id="sidebar">
+        <div class="brand">
+          <img src="logo.svg" alt="" />
+          <div>
+            <b>Alpha<span>Lens</span></b
+            ><small>QUANT TERMINAL</small>
+          </div>
+        </div>
+        <nav id="navigation" aria-label="主导航"></nav>
+        <button id="sourceLink" class="side-foot">
+          <i class="signal"></i><span>数据工作台<small>来源与同步状态</small></span
+          ><span class="end">›</span>
+        </button>
+      </aside>
+      <section class="main">
+        <header class="topbar">
+          <div class="crumb">
+            <button id="hamb" aria-label="展开导航">☰</button><span class="homeicon"></span
+            ><span class="workspace-name">研究终端</span
+            ><span class="compact-brand">Alpha<span>Lens</span></span
+            ><i>/</i><strong id="crumb">市场总览</strong>
+          </div>
+          <div class="right-tools">
+            <button class="search-trigger" data-action="search">
+              <span class="search-icon"></span>搜索股票或代码 <kbd>Ctrl K</kbd>
+            </button>
+            <div class="avatar" title="本地研究工作区">AL</div>
+          </div>
+        </header>
+        <main id="app" aria-live="polite">
+          <div class="loading"><span class="spinner"></span>正在载入研究数据…</div>
+        </main>
+        <footer><span>AlphaLens Research Terminal</span><span>收盘数据 · 美元计价</span></footer>
+      </section>
+    </div>
+    <dialog id="dialog"></dialog>
+    <div id="toast" role="status"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
